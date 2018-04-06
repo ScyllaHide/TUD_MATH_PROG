@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;ÜA 6: Zahlenratespiel&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;Festlegung der Variablen:&#34;,&#34;ganzzahlig: i, rechts, links, vorschlag, vergleich, weiteres_spiel&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;weiteres_spiel = 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;solange weiteres_spiel == 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<while text="&#34;solange l &#62;= r&#34;" comment="&#34;&#34;" color="ffffff">
+					<qWhile>
+						<instruction text="&#34;Eingabe der Variablen: links, rechts&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<while text="&#34;solange vergleich ungleich 1&#34;" comment="&#34;&#34;" color="ffffff">
+							<qWhile>
+								<alternative text="&#34;l - r == 1&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;vorschlag = l&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<instruction text="&#34;Ausgabe: vorschlag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<instruction text="&#34;i = i + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<instruction text="&#34;Eingabe: vergleich&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<alternative text="&#34;vergleich == 0&#34;" comment="&#34;&#34;" color="ffffff">
+											<qTrue>
+												<instruction text="&#34;vorschlag = r&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+												<instruction text="&#34;vergleich = 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+											</qTrue>
+											<qFalse>
+												<alternative text="&#34;vergleich == 1&#34;" comment="&#34;&#34;" color="ffffff">
+													<qTrue>
+													</qTrue>
+													<qFalse>
+														<alternative text="&#34;vergleich == 2&#34;" comment="&#34;&#34;" color="ffffff">
+															<qTrue>
+																<instruction text="&#34;vergleich = 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+															</qTrue>
+															<qFalse>
+																<instruction text="&#34;vergleich = 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+																<instruction text="&#34;Ausgabe: Fehler&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+															</qFalse>
+														</alternative>
+													</qFalse>
+												</alternative>
+											</qFalse>
+										</alternative>
+									</qTrue>
+									<qFalse>
+										<instruction text="&#34;vorschlag = (l + r) / 2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<instruction text="&#34;Ausgabe: vorschlag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<instruction text="&#34;i = i + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<instruction text="&#34;Eingabe: vergleich&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<alternative text="&#34;vergleich == 0&#34;" comment="&#34;&#34;" color="ffffff">
+											<qTrue>
+												<instruction text="&#34;l = vorschlag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+											</qTrue>
+											<qFalse>
+												<alternative text="&#34;vergleich == 2&#34;" comment="&#34;&#34;" color="ffffff">
+													<qTrue>
+														<instruction text="&#34;r = vorschlag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+													</qTrue>
+													<qFalse>
+														<alternative text="&#34;vergleich == 1&#34;" comment="&#34;&#34;" color="ffffff">
+															<qTrue>
+															</qTrue>
+															<qFalse>
+																<instruction text="&#34;vergleich = 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+																<instruction text="&#34;Ausgabe: Fehler&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+															</qFalse>
+														</alternative>
+													</qFalse>
+												</alternative>
+											</qFalse>
+										</alternative>
+									</qFalse>
+								</alternative>
+							</qWhile>
+						</while>
+						<instruction text="&#34;Ausgabe: vorschlag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Ausgabe: i&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qWhile>
+				</while>
+				<instruction text="&#34;Eingabe: weiteres_spiel&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+	</children>
+</root>
