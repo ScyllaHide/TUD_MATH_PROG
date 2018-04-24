@@ -1,7 +1,12 @@
-G95 module created on Tue Apr 24 11:07:59 2018 from puzzlemod.f95
-If you edit this, you'll get what you deserve.
-module-version 9
-(() () () () () () () () () () () () () (2) () () () () () () ())
+GFORTRAN module version '10' created from puzzlemod.f95
+MD5:1aeafdefd9b2000210d1268680ad47f4 -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () (2) () () () () () () () () () ()
+() () ())
+
+()
+
+(('teil' 'puzzlemod' 3))
 
 ()
 
@@ -9,73 +14,79 @@ module-version 9
 
 ()
 
-()
-
-(3 'dreh' 'puzzlemod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL NONE NONE
-FUNCTION INVOKED) (DERIVED 4) 0 0 (5 NONE) () () '' () ())
-6 'error' 'puzzlemod' 1 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE) (
-LOGICAL 4) 0 0 () () () '' () ())
-7 'i' 'puzzlemod' 1 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE) (
-INTEGER 4) 0 0 () () () '' () ())
-8 'j' 'puzzlemod' 1 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE) (
-INTEGER 4) 0 0 () () () '' () ())
-9 'kein_teil' 'puzzlemod' 1 ((PARAMETER UNKNOWN UNKNOWN UNKNOWN NONE
-NONE) (DERIVED 4) 0 0 () (STRUCTURE (DERIVED 4) 0 4 0 (((ARRAY (INTEGER
-4) 1 (((CONSTANT (INTEGER 4) 0 '0') ()) ((CONSTANT (INTEGER 4) 0 '0') ())
-((CONSTANT (INTEGER 4) 0 '0') ()) ((CONSTANT (INTEGER 4) 0 '0') ())) ())
-()) ((CONSTANT (CHARACTER 1 ((CONSTANT (INTEGER 4) 0 '1'))) 0 1 ' ') ()))
-()) () () '' () ())
-10 'lies_puzzle' 'puzzlemod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL NONE
-NONE SUBROUTINE) (PROCEDURE 0) 0 0 (11 NONE) () () '' () ())
-12 'loese_puzzle' 'puzzlemod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL
-NONE NONE SUBROUTINE) (PROCEDURE 0) 0 0 () () () '' () ())
-13 'm' 'puzzlemod' 1 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE) (
-INTEGER 4) 0 0 () () () '' () ())
-14 'n' 'puzzlemod' 1 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE) (
-INTEGER 4) 0 0 () () () '' () ())
-2 'neq' 'puzzlemod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL NONE NONE
-FUNCTION INVOKED) (LOGICAL 4) 0 0 (15 NONE 16 NONE) () () '' () ())
-17 'passendes_teil' 'puzzlemod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL
-NONE NONE FUNCTION INVOKED) (DERIVED 4) 0 0 (18 NONE 19 NONE) () () '' ()
-())
-20 'puzzle' 'puzzlemod' 1 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE
-ALLOCATABLE DIMENSION) (DERIVED 4) 0 0 () (2 DEFERRED () () () ()) () ''
-() ())
-21 'puzzlemod' 'puzzlemod' 1 ((MODULE UNKNOWN UNKNOWN UNKNOWN NONE NONE)
-(UNKNOWN) 0 0 () () () '' () ())
-22 'schreibe_loesche_puzzle' 'puzzlemod' 1 ((PROCEDURE UNKNOWN
-MODULE-PROC DECL NONE NONE SUBROUTINE) (PROCEDURE 0) 0 0 () () () '' ()
-())
-4 'teil' 'puzzlemod' 1 ((DERIVED UNKNOWN UNKNOWN UNKNOWN NONE NONE) (
-UNKNOWN) 0 0 () () () '' ((23 'seiten' (INTEGER 4) (1 EXPLICIT (
-CONSTANT (INTEGER 4) 0 '1') (CONSTANT (INTEGER 4) 0 '4')) () 1 0 0 ()) (
-24 'zeichen' (CHARACTER 1 ((CONSTANT (INTEGER 4) 0 '1'))) () () 0 0 0 ()))
-PRIVATE ())
-25 'teileliste' 'puzzlemod' 1 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE
-NONE ALLOCATABLE DIMENSION) (DERIVED 4) 0 0 () (1 DEFERRED () ()) () ''
-() ())
-19 'seite' '' 26 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (
-INTEGER 4) 0 0 () () () '' () ())
-18 'form' '' 26 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (INTEGER
-4) 0 0 () () () '' () ())
-16 'teil2' '' 27 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (
-DERIVED 4) 0 0 () () () '' () ())
-15 'teil1' '' 27 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (
-DERIVED 4) 0 0 () () () '' () ())
-11 'filename' '' 28 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (
-CHARACTER 1 (())) 0 0 () () () '' () ())
-5 'part' '' 29 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (DERIVED 4)
-0 0 () () () '' () ())
-4 'teil' 'puzzlemod' 1 ((DERIVED UNKNOWN UNKNOWN UNKNOWN NONE NONE) (
-UNKNOWN) 0 0 () () () '' ((23 'seiten' (INTEGER 4) (1 EXPLICIT (
-CONSTANT (INTEGER 4) 0 '1') (CONSTANT (INTEGER 4) 0 '4')) () 1 0 0 ()) (
-24 'zeichen' (CHARACTER 1 ((CONSTANT (INTEGER 4) 0 '1'))) () () 0 0 0 ()))
-PRIVATE ())
-2 'neq' 'puzzlemod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL NONE NONE
-FUNCTION INVOKED) (LOGICAL 4) 0 0 (15 NONE 16 NONE) () () '' () ())
+(3 'Teil' 'puzzlemod' '' 1 ((DERIVED UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 PRIVATE_COMP) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 ((4
+'seiten' (INTEGER 4 0 0 0 INTEGER ()) (1 0 EXPLICIT (CONSTANT (INTEGER 4
+0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4'))
+(UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION)
+UNKNOWN-ACCESS ()) (5 'zeichen' (CHARACTER 1 0 0 0 CHARACTER ((CONSTANT
+(INTEGER 4 0 0 0 INTEGER ()) 0 '1'))) () (UNKNOWN-FL UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ())) PRIVATE (() () ()
+()) () 0 0 71806863)
+6 'dreh' 'puzzlemod' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (DERIVED 3 0 0 0 DERIVED ()) 7 0 (8)
+() 6 () () () 0 0)
+9 'error' 'puzzlemod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0) (LOGICAL 4 0 0 0 LOGICAL ()) 0 0 () () 0 () ()
+() 0 0)
+10 'i' 'puzzlemod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+11 'j' 'puzzlemod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+12 'kein_teil' 'puzzlemod' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0) (DERIVED 3 0 0 0 DERIVED ()) 0 0 () (
+STRUCTURE (DERIVED 3 0 0 0 DERIVED ()) 0 (((ARRAY (INTEGER 4 0 0 0
+INTEGER ()) 1 (((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') ()) ((
+CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') ()) ((CONSTANT (INTEGER 4 0
+0 0 INTEGER ()) 0 '0') ()) ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0')
+())) ('4')) ()) ((CONSTANT (CHARACTER 1 0 0 0 CHARACTER (())) 0 1 ' ') ()))
+()) () 0 () () () 0 0)
+13 'lies_puzzle' 'puzzlemod' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 14 0 (15) () 0
+() () () 0 0)
+16 'loese_puzzle' 'puzzlemod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0
+0 () () 0 () () () 0 0)
+17 'm' 'puzzlemod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+18 'n' 'puzzlemod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+2 'neq' 'puzzlemod' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (LOGICAL 4 0 0 0 LOGICAL ()) 19 0 (
+20 21) () 2 () () () 0 0)
+22 'passendes_teil' 'puzzlemod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION) (DERIVED 3 0 0 0 DERIVED ()) 23 0
+(24 25) () 22 () () () 0 0)
+26 'puzzle' 'puzzlemod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (DERIVED 3 0 0 0
+DERIVED ()) 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+27 'puzzlemod' 'puzzlemod' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0
+0)
+28 'schreibe_loesche_puzzle' 'puzzlemod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0
+0 () () 0 () () () 0 0)
+29 'teil' 'puzzlemod' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC DECL
+UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 29
+() () () 0 0)
+30 'teileliste' 'puzzlemod' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (DERIVED 3 0 0 0
+DERIVED ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+8 'part' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+DERIVED 3 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+15 'filename' '' '' 14 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+20 'teil1' '' '' 19 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 3 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+21 'teil2' '' '' 19 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 3 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+24 'form' '' '' 23 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+25 'seite' '' '' 23 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 )
 
-('dreh' 0 3 'error' 0 6 'i' 0 7 'j' 0 8 'kein_teil' 0 9 'lies_puzzle' 0
-10 'loese_puzzle' 0 12 'm' 0 13 'n' 0 14 'neq' 0 2 'passendes_teil' 0 17
-'puzzle' 0 20 'puzzlemod' 0 21 'schreibe_loesche_puzzle' 0 22 'teil' 0 4
-'teileliste' 0 25)
+('Teil' 0 3 'dreh' 0 6 'error' 0 9 'i' 0 10 'j' 0 11 'kein_teil' 0 12
+'lies_puzzle' 0 13 'loese_puzzle' 0 16 'm' 0 17 'n' 0 18 'neq' 0 2
+'passendes_teil' 0 22 'puzzle' 0 26 'puzzlemod' 0 27
+'schreibe_loesche_puzzle' 0 28 'teil' 0 29 'teileliste' 0 30)
