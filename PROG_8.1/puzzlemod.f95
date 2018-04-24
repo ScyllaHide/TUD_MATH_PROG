@@ -20,12 +20,23 @@ MODULE PUZZLEMOD
     TYPE(TEIL), PARAMETER     :: KEIN_TEIL = TEIL( (/ 0 , 0 , 0 , 0 /) , " " )
     
     !other variables
-    INTEGER                   :: M , N
+    INTEGER                   :: M , N, i, j
     TYPE(TEIL), DIMENSION(:),   ALLOCATABLE :: TEILELISTE
     TYPE(TEIL), DIMENSION(:,:), ALLOCATABLE :: PUZZLE
     LOGICAL                                 :: ERROR
+	
+	INTERFACE OPERATOR (/=)
+		MODULE PROCEDURE NEQ
+	END INTERFACE
     
     CONTAINS
+	
+	FUNCTION NEQ (TEIL1 , TEIL2)
+		TYPE(TEIL), INTENT(IN) :: TEIL1, TEIL2
+		LOGICAL                :: NEQ
+		
+		NEQ = .NOT. (ALL(TEIL1%SEITEN == TEIL2%SEITEN))
+	END FUNCTION NEQ
     
     !======================= FUNCTION / SUBROUTINE =======================!
     
@@ -64,49 +75,51 @@ MODULE PUZZLEMOD
     END SUBROUTINE LIES_PUZZLE
     
     FUNCTION DREH (PART)
-        TYPE (TEIL), INTENT(INOUT) :: PART
-        INTEGER                    :: HELP
+        TYPE (TEIL), INTENT(IN) :: PART
+		TYPE (TEIL)             :: DREH
         
-        HELP           = PART%SEITEN(1)
-        PART%SEITEN(1) = PART%SEITEN(4)
-        PART%SEITEN(4) = PART%SEITEN(3)
-        PART%SEITEN(3) = PART%SEITEN(2)
-        PART%SEITEN(2) = HELP
-        
-        !alternate version - change type of HELP into INTEGER, DIMENSION(3)
-        !HELP             = PART%SEITEN(1:3)
-        !PART%SEITEN(1)   = PART%SEITEN(4)
-        !PART%SEITEN(2:4) = HELP 
+        DREH%SEITEN(2:4) = PART%SEITEN(1:3)
+        DREH%SEITEN(1)   = PART%SEITEN(4) 
           
     END FUNCTION DREH
     
     FUNCTION PASSENDES_TEIL (FORM,SEITE)
-        INTEGER,    INTENT(IN)  :: FORM, SEITE
-        TYPE(TEIL), INTENT(OUT) :: FITPART
-        INTEGER                 :: i,j
+        INTEGER, INTENT(IN)  :: FORM, SEITE
+        TYPE(TEIL)           :: PASSENDES_TEIL
+        INTEGER              :: i,j
         
         ! search for fitting part
         outer: DO i = 1 , m*n       ! traverses all parts
             inner: DO j = 1 , 4     ! traverses all sides of a part
                 
-                IF ( TEILELISTE(i)%SEITEN(j) == (-1) * FORM ) 
+                IF ( (TEILELISTE(i)%SEITEN(j)) == ((-1) * FORM) ) THEN
                 !fitting part is found - may has to be turned
                     
-                    SELECT CASE ( j )
-                        CASE ( SEITE )     !EXIT outer
-                        CASE ( MODULO( (SEITE + 3 ) , 4) ) DREH ( TEILELISTE(i) )
-                        CASE ( MODULO( (SEITE + 2 ) , 4) ) DREH ( DREH ( TEILELISTE(i) ) )
-                        CASE ( MODULO( (SEITE + 1 ) , 4) ) DREH ( DREH ( DREH ( TEILELISTE(i) ) ) )
-                    END SELECT
+                    ! SELECT CASE ( j )
+                        ! CASE ( SEITE )     !EXIT outer
+                        ! CASE ( MODULO( (SEITE + 3 ) , 4) ) PASSENDES_TEIL = DREH ( TEILELISTE(i) )
+                        ! CASE ( MODULO( (SEITE + 2 ) , 4) ) PASSENDES_TEIL = DREH ( DREH ( TEILELISTE(i) ) )
+                        ! CASE ( MODULO( (SEITE + 1 ) , 4) ) PASSENDES_TEIL = DREH ( DREH ( DREH ( TEILELISTE(i) ) ) )
+                    ! END SELECT
+                 
+					IF ( j == SEITE ) THEN  
+						PASSENDES_TEIL = TEILELISTE(i)
+                    ELSEIF ( j == MODULO( (SEITE + 3 ) , 4) ) THEN 
+						PASSENDES_TEIL = DREH ( TEILELISTE(i) )
+                    ELSEIF ( j == MODULO( (SEITE + 2 ) , 4) ) THEN 
+						PASSENDES_TEIL = DREH ( DREH ( TEILELISTE(i) ) )
+                    ELSEIF ( j == MODULO( (SEITE + 1 ) , 4) ) THEN 
+						PASSENDES_TEIL = DREH ( DREH ( DREH ( TEILELISTE(i) ) ) )
+					END IF
                     
-                    EXIT outer
+					EXIT outer
                 END IF
                 
             END DO inner
         END DO outer
         
-        FITPART       = TEILELISTE(i)   ! saves returning part
-        TEILELISTE(i) = KEIN_TEIL       ! removes returned part
+        !PASSENDES_TEIL = TEILELISTE(i)   ! saves returning part
+        TEILELISTE(i)  = KEIN_TEIL       ! removes returned part
         
     END FUNCTION PASSENDES_TEIL
     
@@ -134,7 +147,7 @@ MODULE PUZZLEMOD
                 
                 PUZZLE(j,i) = PASSENDES_TEIL(PUZZLE(j,i-1)%SEITEN(1), 1)
                 
-                IF (PASSENDES_TEIL(PUZZLE(j-1,i)%SEITEN(2), 2) /= PUZZLE(j,i) THEN
+                IF (PASSENDES_TEIL(PUZZLE(j-1,i)%SEITEN(2), 2) /= PUZZLE(j,i) ) THEN
                     WRITE(*,*) "ERROR: mistakes in captions of parts"
                     error = .TRUE.
                     EXIT rows
@@ -146,12 +159,13 @@ MODULE PUZZLEMOD
     END SUBROUTINE LOESE_PUZZLE
     
     SUBROUTINE SCHREIBE_LOESCHE_PUZZLE
-        CHARACTER (LEN=*) :: zeile
+        CHARACTER (LEN=50) :: zeile
         INTEGER           :: i,j
         
+		zeile = ""
         DO i = 1 , m
             DO j = 1 , n
-                zeile = zeile // PUZZLE(i,j)%ZEICHEN
+                zeile = PUZZLE(i,j)%ZEICHEN // " "
             END DO
             WRITE(*,*) zeile
         END DO
@@ -161,4 +175,4 @@ MODULE PUZZLEMOD
      
     END SUBROUTINE SCHREIBE_LOESCHE_PUZZLE
         
-END MODULE
+END MODULE PUZZLEMOD
