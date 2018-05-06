@@ -4,7 +4,18 @@ PROGRAM PUZZLEPROG
     IMPLICIT NONE
 
     CALL LIES_PUZZLE ("mypuzzle.dat")
+    !WRITE(*,*) "erfolgreich gelesen"
     CALL LOESE_PUZZLE
+    !WRITE(*,*) "erfolgreich gelöst"
     CALL SCHREIBE_LOESCHE_PUZZLE
+
+    ! Testing FUNCTION CYCLE_ADD
+    ! CALL TEST_CYCLE_ADD
+
+    ! Testing FUNCTION DREH
+    ! CALL TEST_DREH
+
+    ! Testing FUNCTION PASSENDES_TEIL
+    ! CALL TEST_PASSENDES_TEIL
 
 END PROGRAM PUZZLEPROG
