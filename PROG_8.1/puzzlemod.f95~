@@ -85,7 +85,7 @@ MODULE PUZZLEMOD
         TYPE (TEIL), INTENT(IN) :: PART
         TYPE (TEIL)             :: DREH
 
-        DREH%SEITEN(2:4) = PART%SEITEN(1:3) !CSHIFT
+        DREH%SEITEN(2:4) = PART%SEITEN(1:3)
         DREH%SEITEN(1)   = PART%SEITEN(4)
         DREH%ZEICHEN     = PART%ZEICHEN
 
@@ -207,46 +207,46 @@ MODULE PUZZLEMOD
 
     !======================= TESTS =======================!
 
-!    SUBROUTINE TEST_DREH
-!        TYPE (TEIL) :: PART, TURNED
-!        LOGICAL     :: TEST
+    SUBROUTINE TEST_DREH
+        TYPE (TEIL) :: PART, TURNED
+        LOGICAL     :: TEST
 
-!        PART = TEIL( (/ 1 , 2 , 3 , 4 /) , "T" )
-!        WRITE(*,*) "Original: ", PART
-!        TURNED = DREH(PART)
-!        WRITE(*,*) "Turned:   ", TURNED
-!        TEST = (TURNED%SEITEN(1) == 4 .AND. TURNED%SEITEN(2) == 1 .AND. &
-!              & TURNED%SEITEN(3) == 2 .AND. TURNED%SEITEN(4) == 3 )
-!        WRITE(*,*) "TEST = ", TEST
+        PART = TEIL( (/ 1 , 2 , 3 , 4 /) , "T" )
+        WRITE(*,*) "Original: ", PART
+        TURNED = DREH(PART)
+        WRITE(*,*) "Turned:   ", TURNED
+        TEST = (TURNED%SEITEN(1) == 4 .AND. TURNED%SEITEN(2) == 1 .AND. &
+              & TURNED%SEITEN(3) == 2 .AND. TURNED%SEITEN(4) == 3 )
+        WRITE(*,*) "TEST = ", TEST
 
-!        TURNED = DREH(DREH(PART))
-!        WRITE(*,*) "Turned:   ", TURNED
-!        TEST = (TURNED%SEITEN(1) == 3 .AND. TURNED%SEITEN(2) == 4 .AND. &
-!              & TURNED%SEITEN(3) == 1 .AND. TURNED%SEITEN(4) == 2 )
-!        WRITE(*,*) "TEST = ", TEST
+        TURNED = DREH(DREH(PART))
+        WRITE(*,*) "Turned:   ", TURNED
+        TEST = (TURNED%SEITEN(1) == 3 .AND. TURNED%SEITEN(2) == 4 .AND. &
+              & TURNED%SEITEN(3) == 1 .AND. TURNED%SEITEN(4) == 2 )
+        WRITE(*,*) "TEST = ", TEST
 
-!        TURNED = DREH(DREH(DREH(PART)))
-!        WRITE(*,*) "Turned:   ", TURNED
-!        TEST = (TURNED%SEITEN(1) == 2 .AND. TURNED%SEITEN(2) == 3 .AND. &
-!              & TURNED%SEITEN(3) == 4 .AND. TURNED%SEITEN(4) == 1 )
-!        WRITE(*,*) "TEST = ", TEST
+        TURNED = DREH(DREH(DREH(PART)))
+        WRITE(*,*) "Turned:   ", TURNED
+        TEST = (TURNED%SEITEN(1) == 2 .AND. TURNED%SEITEN(2) == 3 .AND. &
+              & TURNED%SEITEN(3) == 4 .AND. TURNED%SEITEN(4) == 1 )
+        WRITE(*,*) "TEST = ", TEST
 
-!        READ(*,*)
+        READ(*,*)
 
-!    END SUBROUTINE
+    END SUBROUTINE
 
-!    SUBROUTINE TEST_CYCLE_ADD
-!        WRITE(*,*) "4+0= ", CYCLE_ADD(4,0)
-!        WRITE(*,*) "4+1= ", CYCLE_ADD(4,1)
-!        WRITE(*,*) "4+2= ", CYCLE_ADD(4,2)
-!        WRITE(*,*) "3+4= ", CYCLE_ADD(3,4)
-!        WRITE(*,*) "1-2= ", CYCLE_ADD(1,-2)
-!    END SUBROUTINE TEST_CYCLE_ADD
+    SUBROUTINE TEST_CYCLE_ADD
+        WRITE(*,*) "4+0= ", CYCLE_ADD(4,0)
+        WRITE(*,*) "4+1= ", CYCLE_ADD(4,1)
+        WRITE(*,*) "4+2= ", CYCLE_ADD(4,2)
+        WRITE(*,*) "3+4= ", CYCLE_ADD(3,4)
+        WRITE(*,*) "1-2= ", CYCLE_ADD(1,-2)
+    END SUBROUTINE TEST_CYCLE_ADD
 
-!    SUBROUTINE TEST_PASSENDES_TEIL
-!        WRITE(*,*) "TEST FUNCTION PASSENDES_TEIL"
-!        WRITE(*,*) PASSENDES_TEIL (-7,4)
-!        WRITE(*,*) "Expected: 1 0 -2 7 -L-"
-!    END SUBROUTINE TEST_PASSENDES_TEIL
+    SUBROUTINE TEST_PASSENDES_TEIL
+        WRITE(*,*) "TEST FUNCTION PASSENDES_TEIL"
+        WRITE(*,*) PASSENDES_TEIL (-7,4)
+        WRITE(*,*) "Expected: 1 0 -2 7 -L-"
+    END SUBROUTINE TEST_PASSENDES_TEIL
 
 END MODULE PUZZLEMOD

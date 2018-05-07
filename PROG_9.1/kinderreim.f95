@@ -6,14 +6,14 @@ PROGRAM KINDERREIM
 	TYPE(START)          :: LIST
 	CHARACTER(LEN=50)    :: FILENAME
 	TYPE(CHILD), POINTER :: CURR_CHILD
-	INTEGER              :: i, j
+	INTEGER              :: i
 	
 	WRITE(*,*) "Geben Sie den Dateinamen ein: "
 	READ(*,*) FILENAME
 	CALL BUILD_CYCLE(TRIM(FILENAME), LIST)
 	WRITE(*,*) "------------------------------" 
 	
-	DO j=1, LENGTH(LIST)-1
+	DO 
 		WRITE(*,*) "AKTUELL SPIELEN MIT: "
 		CALL PUT_CYCLE(LIST, LIST%TOP)
 		WRITE(*,*) "----------------------- RUNDENSTART -----------------------"
@@ -39,14 +39,18 @@ PROGRAM KINDERREIM
 		
 		WRITE(*,*) "----------------------- RUNDENENDE -----------------------"
 		
+		IF(LAST_ONE(LIST)) EXIT
 		! change starting point of list
 		LIST%TOP => CURR_CHILD%NEXT
+		
+		IF(LAST_ONE(LIST)) EXIT
+		
 	END DO
 
 	WRITE(*,*) "----------------------- SPIELENDE -----------------------"
 	WRITE(*,*) "GEWONNEN HAT:"
-	CALL PUT_CYCLE(LIST, LIST%TOP)
+	CALL PUT_CYCLE(LIST, CURR_CHILD%NEXT)
 	
-	DEALLOCATE(CURR_CHILD)
+	DEALLOCATE(CURR_CHILD, LIST%TOP)
 	
 END PROGRAM KINDERREIM

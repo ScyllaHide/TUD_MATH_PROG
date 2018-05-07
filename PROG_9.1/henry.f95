@@ -23,7 +23,7 @@ program kinderreim
 
   call init(liste)
 
-  open(unit=33, file="KREIM.DAT", action="read")
+  open(unit=33, file="Kreim.DAT", action="read")
   do
     read(33, *, iostat=error) zeile
     if(error < 0) exit
@@ -31,7 +31,7 @@ program kinderreim
     call inject(liste, zeile)
     anzahlKinder = anzahlKinder + 1
   end do
-
+ write(*,*) "Kinderanzahl: ", anzahlKinder
   allocate(tail, aktuellesKind)
   tail => liste%top
   do while(associated(tail%nachfolger))
