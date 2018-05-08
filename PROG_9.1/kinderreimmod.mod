@@ -1,7 +1,13 @@
-G95 module created on Mon May 07 15:26:16 2018 from kinderreimmod.f95
-If you edit this, you'll get what you deserve.
-module-version 9
-(() () () () () () () () () () () () () () () () () () () () ())
+GFORTRAN module version '10' created from kinderreimmod.f95
+MD5:c51918d9b389707b1883d3c6022d08c6 -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () () () () () () () () () () () ()
+() () ())
+
+()
+
+(('child' 'kinderreimmod' 2) ('child_data' 'kinderreimmod' 3) ('start'
+'kinderreimmod' 4))
 
 ()
 
@@ -9,56 +15,73 @@ module-version 9
 
 ()
 
-()
-
-(2 'build_cycle' 'kinderreimmod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL
-NONE NONE SUBROUTINE) (PROCEDURE 0) 0 0 (3 NONE 4 NONE) () () '' () ())
-5 'child' 'kinderreimmod' 1 ((DERIVED UNKNOWN UNKNOWN UNKNOWN NONE NONE)
-(UNKNOWN) 0 0 () () () '' ((6 'data' (DERIVED 7) () () 0 0 0 ()) (8 'next'
-(DERIVED 5) () () 0 1 0 ())) PUBLIC ())
-7 'child_data' 'kinderreimmod' 1 ((DERIVED UNKNOWN UNKNOWN UNKNOWN NONE
-NONE) (UNKNOWN) 0 0 () () () '' ((9 'name' (CHARACTER 1 ((CONSTANT (
-INTEGER 4) 0 '10'))) () () 0 0 0 ()) (10 'age' (INTEGER 4) () () 0 0 0 ()))
-PUBLIC ())
-11 'del_next' 'kinderreimmod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL
-NONE NONE SUBROUTINE) (PROCEDURE 0) 0 0 (12 NONE 13 NONE) () () '' () ())
-14 'last_one' 'kinderreimmod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL
-NONE NONE FUNCTION) (LOGICAL 4) 0 0 (15 NONE) () () '' () ())
-16 'length' 'kinderreimmod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL NONE
-NONE FUNCTION) (INTEGER 4) 0 0 (17 NONE) () () '' () ())
-18 'print_child' 'kinderreimmod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL
-NONE NONE SUBROUTINE) (PROCEDURE 0) 0 0 (19 NONE) () () '' () ())
-20 'put_cycle' 'kinderreimmod' 1 ((PROCEDURE UNKNOWN MODULE-PROC DECL
-NONE NONE SUBROUTINE) (PROCEDURE 0) 0 0 (21 NONE 22 NONE) () () '' () ())
-23 'start' 'kinderreimmod' 1 ((DERIVED UNKNOWN UNKNOWN UNKNOWN NONE NONE)
-(UNKNOWN) 0 0 () () () '' ((24 'top' (DERIVED 5) () () 0 1 0 ())) PUBLIC
-())
-22 'curr_child' '' 25 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE
-POINTER DUMMY) (DERIVED 5) 0 0 () () () '' () ())
-21 'list' '' 25 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (DERIVED
-23) 0 0 () () () '' () ())
-19 'curr_child' '' 26 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE
-POINTER DUMMY) (DERIVED 5) 0 0 () () () '' () ())
-17 'list' '' 27 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (DERIVED
-23) 0 0 () () () '' () ())
-15 'list' '' 28 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (DERIVED
-23) 0 0 () () () '' () ())
-13 'curr_child' '' 29 ((VARIABLE UNKNOWN UNKNOWN UNKNOWN NONE NONE
-POINTER DUMMY) (DERIVED 5) 0 0 () () () '' () ())
-12 'list' '' 29 ((VARIABLE INOUT UNKNOWN UNKNOWN NONE NONE DUMMY) (
-DERIVED 23) 0 0 () () () '' () ())
-5 'child' 'kinderreimmod' 1 ((DERIVED UNKNOWN UNKNOWN UNKNOWN NONE NONE)
-(UNKNOWN) 0 0 () () () '' ((6 'data' (DERIVED 7) () () 0 0 0 ()) (8 'next'
-(DERIVED 5) () () 0 1 0 ())) PUBLIC ())
-7 'child_data' 'kinderreimmod' 1 ((DERIVED UNKNOWN UNKNOWN UNKNOWN NONE
-NONE) (UNKNOWN) 0 0 () () () '' ((9 'name' (CHARACTER 1 ((CONSTANT (
-INTEGER 4) 0 '10'))) () () 0 0 0 ()) (10 'age' (INTEGER 4) () () 0 0 0 ()))
-PUBLIC ())
-4 'list' '' 30 ((VARIABLE INOUT UNKNOWN UNKNOWN NONE NONE DUMMY) (
-DERIVED 23) 0 0 () () () '' () ())
-3 'filename' '' 30 ((VARIABLE IN UNKNOWN UNKNOWN NONE NONE DUMMY) (
-CHARACTER 1 (())) 0 0 () () () '' () ())
+(2 'Child' 'kinderreimmod' '' 1 ((DERIVED UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 ((5 'data' (DERIVED 3 0 0 0 DERIVED ()) () (UNKNOWN-FL UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (6 'next' (DERIVED
+2 0 0 0 DERIVED ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 POINTER) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0
+48845319)
+3 'Child_data' 'kinderreimmod' '' 1 ((DERIVED UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 ((7 'name' (CHARACTER 1 0 0 0 CHARACTER ((CONSTANT (INTEGER 4 0 0 0
+INTEGER ()) 0 '10'))) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0) UNKNOWN-ACCESS ()) (8 'age' (INTEGER 4 0 0 0 INTEGER ()) ()
+(UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0)
+UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0 5483906)
+4 'Start' 'kinderreimmod' '' 1 ((DERIVED UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 ((9 'top' (DERIVED 2 0 0 0 DERIVED ()) () (UNKNOWN-FL UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER) UNKNOWN-ACCESS ())) PUBLIC (()
+() () ()) () 0 0 18450829)
+10 'build_cycle' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 11
+0 (12 13) () 0 () () () 0 0)
+14 'child' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 () () () 0 0)
+15 'child_data' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
+()) 0 0 () () 0 () () () 0 0)
+16 'del_next' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE ALWAYS_EXPLICIT) (
+UNKNOWN 0 0 0 0 UNKNOWN ()) 17 0 (18 19) () 0 () () () 0 0)
+20 'last_one' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (LOGICAL 4 0 0 0
+LOGICAL ()) 21 0 (22) () 20 () () () 0 0)
+23 'length' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 24 0 (25) () 23
+() () () 0 0)
+26 'print_child' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT) (UNKNOWN 0 0 0
+0 UNKNOWN ()) 27 0 (28) () 0 () () () 0 0)
+29 'put_cycle' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT) (UNKNOWN 0 0 0
+0 UNKNOWN ()) 30 0 (31) () 0 () () () 0 0)
+32 'start' 'kinderreimmod' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 () () () 0 0)
+12 'filename' '' '' 11 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+13 'list' '' '' 11 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (DERIVED 4 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+18 'list' '' '' 17 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (DERIVED 4 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+19 'curr_child' '' '' 17 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 POINTER DUMMY) (DERIVED 2 0 0 0 DERIVED ()) 0 0 () () 0 () ()
+() 0 0)
+22 'list' '' '' 21 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 4 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+25 'list' '' '' 24 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 4 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+28 'curr_child' '' '' 27 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 POINTER DUMMY) (DERIVED 2 0 0 0 DERIVED ()) 0 0 () () 0 () ()
+() 0 0)
+31 'curr_child' '' '' 30 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 POINTER DUMMY) (DERIVED 2 0 0 0 DERIVED ()) 0 0 () () 0 () ()
+() 0 0)
 )
 
-('build_cycle' 0 2 'child' 0 5 'child_data' 0 7 'del_next' 0 11 'last_one'
-0 14 'length' 0 16 'print_child' 0 18 'put_cycle' 0 20 'start' 0 23)
+('Child' 0 2 'Child_data' 0 3 'Start' 0 4 'build_cycle' 0 10 'child' 0
+14 'child_data' 0 15 'del_next' 0 16 'last_one' 0 20 'length' 0 23
+'print_child' 0 26 'put_cycle' 0 29 'start' 0 32)
