@@ -1,0 +1,55 @@
+GFORTRAN module version '10' created from mergemod.f95
+MD5:b1ba7ddebb4c3de20428a79b9040cdc9 -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () () () () () (2) () () () () () ()
+() () ())
+
+()
+
+(('filecomp' 'mergemod' 3))
+
+()
+
+()
+
+()
+
+(3 'Filecomp' 'mergemod' '' 1 ((DERIVED UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 ((4
+'num_unit' (INTEGER 4 0 0 0 INTEGER ()) () (UNKNOWN-FL UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (5 'cont' (INTEGER
+4 0 0 0 INTEGER ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0 2464608)
+6 'filecomp' 'mergemod' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 () () () 0 0)
+7 'insert' 'mergemod' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 8 0
+(9 10) () 0 () () () 0 0)
+2 'leq' 'mergemod' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (LOGICAL 4 0 0 0 LOGICAL ()) 11 0 (
+12 13) () 2 () () () 0 0)
+14 'mergemod' 'mergemod' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0
+0)
+15 'sort' 'mergemod' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 16
+0 (17) () 0 () () () 0 0)
+9 'list' '' '' 8 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DIMENSION DUMMY) (DERIVED 3 0 0 0 DERIVED ()) 0 0 () (1 0
+ASSUMED_SHAPE (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () ()
+() 0 0)
+10 'toins' '' '' 8 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (DERIVED 3 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+12 'file1' '' '' 11 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 3 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+13 'file2' '' '' 11 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 3 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+17 'list' '' '' 16 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DIMENSION DUMMY) (DERIVED 3 0 0 0 DERIVED ()) 0 0 () (1 0
+ASSUMED_SHAPE (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () ()
+() 0 0)
+)
+
+('Filecomp' 0 3 'filecomp' 0 6 'insert' 0 7 'leq' 0 2 'mergemod' 0 14
+'sort' 0 15)
