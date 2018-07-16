@@ -4,7 +4,7 @@ MODULE MERGEMOD
 
     TYPE FILECOMP
         INTEGER :: NUM_UNIT  ! Unitnummer
-        INTEGER :: CONT      ! zuletzt eingelesene Zahl 
+        INTEGER :: CONT      ! zuletzt eingelesene Zahl
     END TYPE
 
     INTERFACE OPERATOR (<=)
@@ -19,12 +19,12 @@ MODULE MERGEMOD
 
         LEQ = (FILE1%CONT <= FILE2%CONT)
     END FUNCTION
-    
+
     SUBROUTINE SORT(list)
         TYPE(FILECOMP), DIMENSION(:) :: list
         TYPE(FILECOMP)               :: toins
         INTEGER                      :: i, j
-        
+
         DO i=2 , UBOUND(list,1)
             toins = list(i)
             j = i
@@ -39,9 +39,9 @@ MODULE MERGEMOD
             END DO
             list(j) = toins
         END DO
-                       
+
     END SUBROUTINE SORT
-    
+
     SUBROUTINE BUBBLESORT(list)
         TYPE(FILECOMP), DIMENSION(:), INTENT(INOUT) :: list
         INTEGER                                     :: num, i, n
@@ -60,40 +60,40 @@ MODULE MERGEMOD
             END IF
           END DO
         END DO
-        
+
     END SUBROUTINE SORT
 
     SUBROUTINE INSERT(list, toins)
         TYPE(FILECOMP), DIMENSION(:), INTENT(INOUT) :: list
         TYPE(FILECOMP)                              :: toins
         INTEGER                                     :: mid, left, right
-        
+
         left  = LBOUND(list,1) + 1
         right = UBOUND(list,1)
-        
-        DO 
+
+        DO
             mid = (left+right) / 2
-	    	IF(left >= right) THEN
-			    EXIT
-	        ELSEIF(toins <= list(mid)) THEN
+            IF(left >= right) THEN
+                EXIT
+            ELSEIF(toins <= list(mid)) THEN
                 right = mid - 1
             ELSE
                 left = mid + 1
             END IF
         END DO
-        
+
         IF(mid == 1) THEN
             list(1) = toins
         ELSE
             IF(toins <= list(mid)) THEN
-			    mid = mid - 1 
-		    END IF
+                mid = mid - 1
+            END IF
             list(1:mid-1) = list(2:mid)
-            list(mid)     = toins   
-        END IF 
+            list(mid)     = toins
+        END IF
 
     END SUBROUTINE INSERT
-    
+
     SUBROUTINE INSERT2(LIST, TOINS)
         TYPE(FILECOMP), DIMENSION(:), INTENT(INOUT) :: list
         TYPE(FILECOMP)                              :: toins
@@ -107,18 +107,18 @@ MODULE MERGEMOD
                 mid = right
                 EXIT
             END IF
-            
+
             midsave = mid
-            mid = (right+left)/2 
-            
+            mid = (right+left)/2
+
             IF (mid == midsave) EXIT
-            
+
             IF (toins <= list(mid)) THEN
                 right = mid
             ELSE
                 left = mid
             END IF
-            
+
             IF (right == left) EXIT
         ! END DO
 
@@ -140,13 +140,13 @@ MODULE MERGEMOD
         END DO
         OPEN(UNIT=44, FILE = "ziel.dat", ACTION = "WRITE")
     END SUBROUTINE PHASE1
-    
+
     SUBROUTINE PHASE2(workspace)
         INTEGER                      :: i, num_file
         TYPE(FILECOMP), DIMENSION(:) :: workspace
-        
+
         num_file = SIZE(workspace,1)
-       
+
         DO i=1, num_file
             workspace(i)%NUM_UNIT = i+50
             READ(UNIT=i+50,*) workspace(i)%CONT
@@ -159,19 +159,19 @@ MODULE MERGEMOD
         INTEGER                                   :: start, ios, curr_unit, n
         TYPE(FILECOMP)                            :: new
         TYPE(FILECOMP), DIMENSION(:), ALLOCATABLE :: workspace
-        
+
         WRITE(*,*) workspace
-	    start = 1       ! represents minimum index of active workspace
+        start = 1       ! represents minimum index of active workspace
         n = SIZE(workspace,1)
-        
-        DO 
+
+        DO
             WRITE(44,*) workspace(start)%CONT
             WRITE(*,*)  "Schreibe Zahl im Index ", start, " in Ziel: ", workspace(start)%CONT
-            
+
             curr_unit = workspace(start)%NUM_UNIT
             new%NUM_UNIT = curr_unit
             READ(UNIT=curr_unit,FMT=*, iostat=ios) new%CONT
-            
+
             IF(ios == 0) THEN
                 CALL INSERT(workspace(start:n),new) !alternativ: INSERT2(workspace(start:),new)
             ELSE
@@ -180,7 +180,7 @@ MODULE MERGEMOD
                 WRITE(*,*) new
             END IF
             IF(start > n) EXIT
-        END DO      
+        END DO
         CLOSE(UNIT=44)
     END SUBROUTINE PHASE3
 
@@ -207,9 +207,9 @@ MODULE MERGEMOD
             WRITE(*,*) ">> Die Folge ist tatsächlich monoton wachsend."
         ELSE
             WRITE(*,*) ">> Ups - ein Fehler: die Folge ist nicht monoton:"
-            
+
         END IF
-        
+
         CLOSE(UNIT=num_unit)
     END SUBROUTINE TEST
 

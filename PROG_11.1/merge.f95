@@ -1,5 +1,5 @@
 PROGRAM MERGE_HP
-    
+
     USE MERGEMOD
     IMPLICIT NONE
 
@@ -29,16 +29,16 @@ PROGRAM MERGE_HP
     CALL PHASE1(num_file)
     WRITE(*,*) "Phase 1 fertig."
     WRITE(*,*) "-----------------------------------"
-    
+
     CALL PHASE2(workspace)
     WRITE(*,*) "Phase 2 fertig."
     DO i = 1, num_file
         WRITE(*,*) "Unit: ", workspace(i)%NUM_UNIT, " Zahl: ", workspace(i)%CONT
     END DO
     WRITE(*,*) "-----------------------------------"
-    
+
     CALL PHASE3(workspace)
     WRITE(*,*) "Phase 3 fertig."
-    
+
     CALL TEST(44)
 END PROGRAM MERGE_HP

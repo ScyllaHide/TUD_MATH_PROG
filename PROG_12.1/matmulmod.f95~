@@ -1,0 +1,84 @@
+MODULE MATMULMOD
+
+    IMPLICIT NONE
+
+    CONTAINS
+
+    FUNCTION SIMPLE_MATMUL(A,B) RESULT (C)
+        REAL, DIMENSION(:,:)              :: A,B
+        REAL, DIMENSION(:,:), ALLOCATABLE :: C
+        INTEGER                           :: size, row, col, sum, i
+
+        size = UBOUND(A,1)
+        ALLOCATE( C(size,size) )
+        
+        DO row = 1 , size
+            DO col = 1 , size
+                sum = 0
+                DO j = 1 , size
+                    sum = sum + A(row,j) * B(j,col)
+                END DO
+                C(row,col) = sum
+            END DO
+        END DO
+
+    END FUNCTION SIMPLE_MATMUL
+
+
+    RECURSIVE FUNCTION STRASSEN_MATMUL(A,B) RESULT (C)
+        REAL, DIMENSION(:,:)              :: A, B
+        REAL, DIMENSION(:,:), ALLOCATABLE :: C 
+        REAL, DIMENSION(:,:), ALLOCATABLE :: M1, M2, M3, M4, M5, M6, M7
+        REAL, DIMENSION(:,:), ALLOCATABLE :: A11, A12, A21, A22
+        REAL, DIMENSION(:,:), ALLOCATABLE :: B11, B12, B21, B22
+        REAL, DIMENSION(:,:), ALLOCATABLE :: C11, C12, C21, C22
+        INTEGER                           :: size
+
+        size = UBOUND(A,1)
+        ALLOCATE( C(1:size,1:size) )
+
+        IF (size == 1) THEN
+            C = A * B
+        ELSE
+            ALLOCATE(M1(size/2,size/2), M2(size/2,size/2), M3(size/2,size/2), &
+            &        M4(size/2,size/2), M5(size/2,size/2), M6(size/2,size/2), &
+            &        M7(size/2,size/2))
+            ALLOCATE(A11(size/2,size/2), A12(size/2,size/2), A21(size/2,size/2), &
+            &        A22(size/2,size/2))
+            ALLOCATE(B11(size/2,size/2), B12(size/2,size/2), B21(size/2,size/2), &
+            &        B22(size/2,size/2))
+            ALLOCATE(C11(size/2,size/2), C12(size/2,size/2), C21(size/2,size/2), &
+            &        C22(size/2,size/2))
+
+            A11 = A(1:size/2, 1:size/2)
+            A12 = A(1:size/2, size/2+1:size)
+            A21 = A(size/2+1:size, 1:size/2)
+            A22 = A(size/2+1:size, size/2+1:size)
+
+            B11 = B(1:size/2, 1:size/2)
+            B12 = B(1:size/2, size/2+1:size)
+            B21 = B(size/2+1:size, 1:size/2)
+            B22 = B(size/2+1:size, size/2+1:size)
+
+            M1 = STRASSEN_MATMUL(A12 - A22 , B21 + B22)
+            M2 = STRASSEN_MATMUL(A11 + A22 , B11 + B22)
+            M3 = STRASSEN_MATMUL(A11 - A21 , B11 + B12)
+            M4 = STRASSEN_MATMUL(A11 + A12 , B22      )
+            M5 = STRASSEN_MATMUL(A11       , B12 - B22)
+            M6 = STRASSEN_MATMUL(A22       , B21 - B11)
+            M7 = STRASSEN_MATMUL(A21 + A22 , B11      )
+
+            C11 = M1 + M2 - M4 + M6
+            C12 = M4 + M5
+            C21 = M6 + M7
+            C22 = M2 - M3 + M5 - M7
+
+            C(1 : size/2     , 1 : size/2     ) = C11
+            C(1 : size/2     , size/2+1 : size) = C12
+            C(size/2+1 : size, 1 : size/2     ) = C21
+            C(size/2+1 : size, size/2+1 : size) = C22
+
+        END IF
+    END FUNCTION STRASSEN_MATMUL
+  
+END MODULE MATMULMOD
